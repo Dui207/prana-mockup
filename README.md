@@ -8,5 +8,5 @@ Maqueta visual de la tienda en línea de PRANA. Es un prototipo de diseño con d
 
 ## Cambiar las fotos
 
-1. Copia tus imágenes a la carpeta `img/` con los nombres de `img/LEEME.txt` (por ejemplo `hero.jpg`, `producto-1.jpg`).
+1. Copia tus imágenes a la carpeta `img/` con los nombres de `img/LEEME.txt` (por ejemplo `escena-1.jpg`, `producto-1.jpg`).
 2. Sube los cambios a GitHub. La página se actualiza sola en uno o dos minutos.

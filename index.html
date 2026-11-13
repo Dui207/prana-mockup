@@ -17,17 +17,19 @@
 
   <header class="site-header">
     <div class="wrap">
-      <nav class="nav" aria-label="Principal">
-        <a href="#colecciones">Colecciones</a>
-        <a href="#novedades">Novedades</a>
-        <a href="#materiales">Materiales</a>
-      </nav>
       <a class="wordmark" href="#" aria-label="PRANA, inicio">PRANA</a>
-      <div class="tools">
-        <button type="button" id="search-toggle" class="icon-btn" aria-label="Buscar">🔍</button>
-        <button type="button" id="cart-open" class="icon-btn" aria-label="Abrir carrito">
-          🛍️<span class="count" id="cart-count" hidden>0</span>
-        </button>
+      <div class="head-right">
+        <nav class="nav" aria-label="Principal">
+          <a href="#colecciones">Colecciones</a>
+          <a href="#novedades">Novedades</a>
+          <a href="#materiales">Materiales</a>
+        </nav>
+        <div class="tools">
+          <button type="button" id="search-toggle" class="icon-btn" aria-label="Buscar">🔍</button>
+          <button type="button" id="cart-open" class="icon-btn" aria-label="Abrir carrito">
+            🛍️<span class="count" id="cart-count" hidden>0</span>
+          </button>
+        </div>
       </div>
     </div>
     <div class="search" id="search" hidden>
@@ -39,24 +41,61 @@
 
   <main>
 
+    <!-- HERO: escenas cotidianas. Toca el "+" sobre una joya para verla y comprarla.
+         Fotos: img/escena-1.jpg, escena-2.jpg, escena-3.jpg
+         Posición de cada punto: --x y --y (porcentaje de la foto) -->
     <section class="hero">
       <div class="wrap">
-        <div class="hero-frame">
-          <div class="hero-copy">
-            <h1>Se queda puesta.</h1>
-            <p>Joyería en acero 316L de diseño orgánico. Resiste el agua y el uso diario.</p>
-            <a class="btn" href="#novedades">Ver novedades</a>
+
+        <div class="hero-copy">
+          <h1>Se queda puesta.</h1>
+          <p>Joyería en acero 316L de diseño orgánico. Resiste el agua y el uso diario.</p>
+          <a class="btn" href="#novedades">Ver novedades</a>
+          <p class="hero-hint">👆 Toca los puntos de la foto para comprar lo que ves.</p>
+        </div>
+
+        <div>
+          <div class="stage" id="stage">
+
+            <div class="scene is-active ph" id="escena-1" style="--a:#e3d8c7; --b:#c4b095;">
+              <span>Escena · Mañana · img/escena-1.jpg</span>
+              <img class="pic" src="img/escena-1.jpg" alt="Joyería PRANA en la mañana" onerror="this.remove()">
+              <button class="spot" type="button" style="--x:62%; --y:36%;" data-product="Aretes Concha" aria-label="Ver Aretes Concha" aria-expanded="false"></button>
+              <button class="spot" type="button" style="--x:36%; --y:68%;" data-product="Anillo Ola" aria-label="Ver Anillo Ola" aria-expanded="false"></button>
+            </div>
+
+            <div class="scene ph" id="escena-2" style="--a:#d9cdb9; --b:#b8a283;">
+              <span>Escena · Agua · img/escena-2.jpg</span>
+              <img class="pic" src="img/escena-2.jpg" alt="Joyería PRANA en el agua" onerror="this.remove()">
+              <button class="spot" type="button" style="--x:55%; --y:48%;" data-product="Pulsera Marea" aria-label="Ver Pulsera Marea" aria-expanded="false"></button>
+              <button class="spot" type="button" style="--x:30%; --y:28%;" data-product="Collar Brisa" aria-label="Ver Collar Brisa" aria-expanded="false"></button>
+            </div>
+
+            <div class="scene ph" id="escena-3" style="--a:#cfc2ad; --b:#a89272;">
+              <span>Escena · Noche · img/escena-3.jpg</span>
+              <img class="pic" src="img/escena-3.jpg" alt="Joyería PRANA en la noche" onerror="this.remove()">
+              <button class="spot" type="button" style="--x:50%; --y:34%;" data-product="Collar Duna" aria-label="Ver Collar Duna" aria-expanded="false"></button>
+              <button class="spot" type="button" style="--x:68%; --y:62%;" data-product="Aretes Raíz" aria-label="Ver Aretes Raíz" aria-expanded="false"></button>
+            </div>
+
+            <!-- Tarjeta que aparece al tocar un punto (la llena app.js) -->
+            <div class="spot-card" id="spot-card" hidden>
+              <h3 id="spot-name"></h3>
+              <span class="price" id="spot-price"></span>
+              <button type="button" class="add" id="spot-add">🛍️ Agregar</button>
+            </div>
           </div>
-          <!-- Foto principal: pon tu imagen en img/hero.jpg -->
-          <div class="ph hero-photo" style="--a:#e3d8c7; --b:#c4b095;">
-            <span>Foto principal · img/hero.jpg</span>
-            <img class="pic" src="img/hero.jpg" alt="Manos con anillos PRANA" onerror="this.remove()">
+
+          <div class="scene-tabs" role="tablist" aria-label="Escenas">
+            <button class="tab" type="button" role="tab" aria-selected="true" data-scene="escena-1">☀️ Mañana</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-scene="escena-2">💧 Agua</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-scene="escena-3">🌙 Noche</button>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Lo que cada cliente quiere saber, a primera vista -->
     <section class="perks" aria-label="Por qué PRANA">
       <div class="wrap">
         <p><span aria-hidden="true">💧</span> Resistente al agua</p>
@@ -66,49 +105,46 @@
       </div>
     </section>
 
+    <!-- COLECCIONES: lista tipográfica. Fotos: img/aretes.jpg, anillos.jpg, collares.jpg, pulseras.jpg -->
     <section class="section" id="colecciones">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Colecciones</h2>
-        </div>
-        <div class="collections">
-          <a class="collection" href="#novedades" data-filter="aretes">
-            <div class="ph" style="--a:#ebe2d4; --b:#d2c2a9;">
-              <span>img/aretes.jpg</span>
-              <img class="pic" src="img/aretes.jpg" alt="" onerror="this.remove()">
-            </div>
-            <h3>Aretes</h3>
-          </a>
-          <a class="collection" href="#novedades" data-filter="anillos">
-            <div class="ph" style="--a:#e6dccd; --b:#bfa987;">
-              <span>img/anillos.jpg</span>
-              <img class="pic" src="img/anillos.jpg" alt="" onerror="this.remove()">
-            </div>
-            <h3>Anillos</h3>
-          </a>
-          <a class="collection" href="#novedades" data-filter="collares">
-            <div class="ph" style="--a:#efe7da; --b:#d8c9b0;">
-              <span>img/collares.jpg</span>
-              <img class="pic" src="img/collares.jpg" alt="" onerror="this.remove()">
-            </div>
-            <h3>Collares</h3>
-          </a>
-          <a class="collection" href="#novedades" data-filter="pulseras">
-            <div class="ph" style="--a:#e4d9c8; --b:#c9b698;">
-              <span>img/pulseras.jpg</span>
-              <img class="pic" src="img/pulseras.jpg" alt="" onerror="this.remove()">
-            </div>
-            <h3>Pulseras</h3>
-          </a>
-        </div>
+        <div class="section-head"><h2>Colecciones</h2></div>
+        <ul class="index">
+          <li>
+            <a href="#novedades" data-filter="aretes">
+              <span class="word">Aretes</span>
+              <span class="thumb ph" style="--a:#ebe2d4; --b:#d2c2a9;"><img class="pic" src="img/aretes.jpg" alt="" onerror="this.remove()"></span>
+              <span class="n" data-count="aretes"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#novedades" data-filter="anillos">
+              <span class="word">Anillos</span>
+              <span class="thumb ph" style="--a:#e6dccd; --b:#bfa987;"><img class="pic" src="img/anillos.jpg" alt="" onerror="this.remove()"></span>
+              <span class="n" data-count="anillos"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#novedades" data-filter="collares">
+              <span class="word">Collares</span>
+              <span class="thumb ph" style="--a:#efe7da; --b:#d8c9b0;"><img class="pic" src="img/collares.jpg" alt="" onerror="this.remove()"></span>
+              <span class="n" data-count="collares"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#novedades" data-filter="pulseras">
+              <span class="word">Pulseras</span>
+              <span class="thumb ph" style="--a:#e4d9c8; --b:#c9b698;"><img class="pic" src="img/pulseras.jpg" alt="" onerror="this.remove()"></span>
+              <span class="n" data-count="pulseras"></span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="section" id="novedades" style="padding-top:0">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Novedades</h2>
-        </div>
+        <div class="section-head"><h2>Novedades</h2></div>
 
         <div class="chips" role="group" aria-label="Filtrar por categoría">
           <button type="button" class="chip is-active" data-filter="todo">Todo</button>
@@ -240,30 +276,32 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="brand">
-        <div class="wordmark">PRANA</div>
-        <p>Joyería en acero 316L. Cancún y Ciudad de México.</p>
+      <div class="cols">
+        <div class="brand">
+          <p>Joyería en acero 316L. Cancún y Ciudad de México.</p>
+          <p class="legal">💳 Paga con tarjeta, OXXO o transferencia SPEI.</p>
+        </div>
+        <div>
+          <h4>Tienda</h4>
+          <ul>
+            <li><a href="#novedades" data-filter="aretes">Aretes</a></li>
+            <li><a href="#novedades" data-filter="anillos">Anillos</a></li>
+            <li><a href="#novedades" data-filter="collares">Collares</a></li>
+            <li><a href="#novedades" data-filter="pulseras">Pulseras</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ayuda</h4>
+          <ul>
+            <li><a href="#">Envíos</a></li>
+            <li><a href="#">Cambios y devoluciones</a></li>
+            <li><a href="#">Cuidado de tus joyas</a></li>
+            <li><a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener">📷 @pranajoyeria</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Tienda</h4>
-        <ul>
-          <li><a href="#novedades" data-filter="aretes">Aretes</a></li>
-          <li><a href="#novedades" data-filter="anillos">Anillos</a></li>
-          <li><a href="#novedades" data-filter="collares">Collares</a></li>
-          <li><a href="#novedades" data-filter="pulseras">Pulseras</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Ayuda</h4>
-        <ul>
-          <li><a href="#">Envíos</a></li>
-          <li><a href="#">Cambios y devoluciones</a></li>
-          <li><a href="#">Cuidado de tus joyas</a></li>
-          <li><a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener">📷 @pranajoyeria</a></li>
-        </ul>
-      </div>
-      <p class="legal">💳 Paga con tarjeta, OXXO o transferencia SPEI.</p>
     </div>
+    <div class="mega" aria-hidden="true">PRANA</div>
   </footer>
 
   <!-- Carrito lateral -->

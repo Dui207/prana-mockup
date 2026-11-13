@@ -3,7 +3,9 @@ FOTOS DE PRANA
 Pon tus imagenes en esta carpeta con ESTOS nombres (en formato .jpg).
 Si una imagen no existe, la pagina muestra un color de arena en su lugar.
 
-  hero.jpg                       foto grande del inicio
+  escena-1.jpg  escena-2.jpg  escena-3.jpg   las 3 fotos grandes del inicio
+                                 (manana, agua, noche). Sobre cada una se
+                                 puede tocar la joya para comprarla.
   aretes.jpg  anillos.jpg        fotos de las colecciones
   collares.jpg  pulseras.jpg
   producto-1.jpg ... producto-8.jpg   las 8 piezas de ejemplo
