@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel PRANA · vista de ejemplo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,800&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .panel { display: grid; grid-template-columns: 230px 1fr; min-height: 100vh; }
+    .side { background: var(--sand); padding: 28px 20px; border-right: 1px solid var(--dune); }
+    .side .wordmark { display: block; font-size: 24px; margin-bottom: 4px; }
+    .side small { color: var(--stone); font-size: 12px; }
+    .side ul { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 2px; }
+    .side a { display: block; padding: 10px 12px; font-size: 15px; }
+    .side a[aria-current="page"] { background: var(--black); color: var(--paper); }
+    .side a:not([aria-current]):hover { background: rgba(0,0,0,0.06); }
+
+    .main { padding: 36px clamp(20px, 4vw, 56px); max-width: 1000px; }
+    .main h1 { margin: 0 0 6px; font-family: var(--serif); font-weight: 500; font-size: 40px; }
+    .main > p { margin: 0 0 32px; color: #3b372f; }
+
+    .cols { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+    .field { display: grid; gap: 6px; margin-bottom: 18px; }
+    .field label { font-size: 14px; font-weight: 500; }
+    .field input[type="text"], .field input[type="date"], .field select, .field textarea {
+      padding: 11px 12px; border: 1px solid var(--dune); background: #fff; font: inherit;
+    }
+    .field textarea { min-height: 84px; resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .drop { display: grid; place-items: center; min-height: 96px; border: 1px dashed var(--stone); color: var(--stone); font-size: 14px; background: #fff; }
+    .switch { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; font-size: 14px; }
+    .switch input { width: 20px; height: 20px; accent-color: var(--black); }
+
+    .preview { position: sticky; top: 24px; }
+    .preview h2 { margin: 0 0 12px; font-size: 14px; font-weight: 500; color: var(--stone); }
+    .preview .box { border: 1px solid var(--dune); background: var(--paper); }
+    .preview .popup-body { grid-template-columns: 1fr 1fr; }
+    .preview .popup-body .ph { min-height: 240px; }
+    .preview .popup-text { padding: 24px 20px; }
+    .preview .popup-text h2 { margin: 0 0 8px; font-family: var(--serif); font-weight: 500; font-size: 24px; color: var(--black); }
+    .preview .popup-text p { margin: 0 0 14px; font-size: 14px; }
+    .preview .popup-text .btn { padding: 11px; font-size: 13px; }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 56px; font-size: 14px; }
+    caption { text-align: left; font-family: var(--serif); font-size: 24px; padding-bottom: 12px; }
+    th, td { text-align: left; padding: 11px 8px; border-bottom: 1px solid var(--sand); }
+    th { font-weight: 500; color: var(--stone); }
+    .tag { display: inline-block; padding: 2px 10px; background: var(--sand); font-size: 12px; }
+
+    .main > p.note { margin: 40px 0 0; padding: 14px 16px; background: var(--sand); font-size: 13px; color: #3b372f; }
+
+    @media (max-width: 900px) {
+      .panel { grid-template-columns: 1fr; }
+      .side { border-right: 0; border-bottom: 1px solid var(--dune); }
+      .side ul { grid-auto-flow: column; overflow-x: auto; margin-top: 16px; }
+      .side a { white-space: nowrap; }
+      .cols { grid-template-columns: 1fr; }
+      .preview { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <aside class="side">
+      <a class="wordmark" href="index.html">PRANA</a>
+      <small>Panel de administración</small>
+      <ul>
+        <li><a href="#">Pedidos</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Fotos del inicio</a></li>
+        <li><a href="#">Banner de anuncio</a></li>
+        <li><a href="#" aria-current="page">Popup</a></li>
+        <li><a href="#">Descuentos</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <h1>Popup</h1>
+      <p>Cambia el mensaje que ven tus clientes al entrar. Sin tocar código.</p>
+
+      <div class="cols">
+        <form onsubmit="return false">
+          <div class="field">
+            <label for="titulo">Título</label>
+            <input id="titulo" type="text" value="10% en tu primera compra">
+          </div>
+          <div class="field">
+            <label for="texto">Texto</label>
+            <textarea id="texto">Déjanos tu correo y te enviamos tu código.</textarea>
+          </div>
+          <div class="field">
+            <label>Imagen</label>
+            <div class="drop">Arrastra una foto o haz clic para subirla</div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="desde">Mostrar desde</label>
+              <input id="desde" type="date" value="2026-11-15">
+            </div>
+            <div class="field">
+              <label for="hasta">Hasta</label>
+              <input id="hasta" type="date" value="2026-11-30">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cuando">Cuándo aparece</label>
+            <select id="cuando">
+              <option>Al entrar al sitio</option>
+              <option selected>A los 5 segundos</option>
+              <option>Al intentar salir</option>
+            </select>
+          </div>
+          <label class="switch"><input type="checkbox" checked> Mostrar una sola vez por visitante</label>
+          <label class="switch"><input type="checkbox" checked> Popup activo</label>
+          <button class="btn" type="submit">Guardar cambios</button>
+        </form>
+
+        <div class="preview">
+          <h2>Así lo verán tus clientes</h2>
+          <div class="box">
+            <div class="popup-body">
+              <div class="ph" style="--a:#e6dbc9; --b:#c0aa89;"><span>Tu imagen</span></div>
+              <div class="popup-text">
+                <h2>10% en tu primera compra</h2>
+                <p>Déjanos tu correo y te enviamos tu código.</p>
+                <div class="btn" style="width:100%;text-align:center">Quiero mi código</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <caption>Productos</caption>
+        <thead>
+          <tr><th>Producto</th><th>Precio</th><th>Existencias</th><th>Estado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aretes Concha</td><td>$289</td><td>14</td><td><span class="tag">Publicado</span></td></tr>
+          <tr><td>Anillo Ola</td><td>$219 <small>(antes $259)</small></td><td>9</td><td><span class="tag">Publicado</span></td></tr>
+          <tr><td>Collar Duna</td><td>$349</td><td>0</td><td><span class="tag">Agotado</span></td></tr>
+        </tbody>
+      </table>
+
+      <p class="note">Vista de ejemplo. El panel real se construye sobre el administrador de Django y se ajusta a lo que PRANA necesite.</p>
+    </main>
+  </div>
+</body>
+</html>

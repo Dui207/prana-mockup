@@ -1,0 +1,15 @@
+FOTOS DE PRANA
+==============
+Pon tus imagenes en esta carpeta con ESTOS nombres (en formato .jpg).
+Si una imagen no existe, la pagina muestra un color de arena en su lugar.
+
+  hero.jpg                       foto grande del inicio
+  aretes.jpg  anillos.jpg        fotos de las colecciones
+  collares.jpg  pulseras.jpg
+  producto-1.jpg ... producto-8.jpg   las 8 piezas de ejemplo
+  ig-1.jpg ... ig-6.jpg          la tira "Asi se usa"
+  popup.jpg                      imagen del popup
+
+No importa la calidad ni el tamano: para el mockup sirve cualquier foto
+(incluso capturas de pantalla). Si tu archivo es .png o .jpeg, renombralo
+o conviertelo a .jpg.

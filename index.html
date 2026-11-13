@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRANA · Joyería en acero 316L</title>
+  <meta name="description" content="Joyería en acero 316L de diseño orgánico. Resistente al agua y pensada para el uso diario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,800&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Banner de anuncio: texto y fechas editables desde el panel -->
+  <div class="announce">✨ Nuevos diseños orgánicos ya disponibles</div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav" aria-label="Principal">
+        <a href="#colecciones">Colecciones</a>
+        <a href="#novedades">Novedades</a>
+        <a href="#materiales">Materiales</a>
+      </nav>
+      <a class="wordmark" href="#" aria-label="PRANA, inicio">PRANA</a>
+      <div class="tools">
+        <button type="button" id="search-toggle" class="icon-btn" aria-label="Buscar">🔍</button>
+        <button type="button" id="cart-open" class="icon-btn" aria-label="Abrir carrito">
+          🛍️<span class="count" id="cart-count" hidden>0</span>
+        </button>
+      </div>
+    </div>
+    <div class="search" id="search" hidden>
+      <div class="wrap">
+        <input id="search-input" type="search" placeholder="Busca por nombre: aretes, anillo, collar…" aria-label="Buscar productos">
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-frame">
+          <div class="hero-copy">
+            <h1>Se queda puesta.</h1>
+            <p>Joyería en acero 316L de diseño orgánico. Resiste el agua y el uso diario.</p>
+            <a class="btn" href="#novedades">Ver novedades</a>
+          </div>
+          <!-- Foto principal: pon tu imagen en img/hero.jpg -->
+          <div class="ph hero-photo" style="--a:#e3d8c7; --b:#c4b095;">
+            <span>Foto principal · img/hero.jpg</span>
+            <img class="pic" src="img/hero.jpg" alt="Manos con anillos PRANA" onerror="this.remove()">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lo que cada cliente quiere saber, a primera vista -->
+    <section class="perks" aria-label="Por qué PRANA">
+      <div class="wrap">
+        <p><span aria-hidden="true">💧</span> Resistente al agua</p>
+        <p><span aria-hidden="true">✨</span> Acero 316L</p>
+        <p><span aria-hidden="true">🌿</span> Diseño orgánico</p>
+        <p><span aria-hidden="true">💳</span> Tarjeta, OXXO o SPEI</p>
+      </div>
+    </section>
+
+    <section class="section" id="colecciones">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Colecciones</h2>
+        </div>
+        <div class="collections">
+          <a class="collection" href="#novedades" data-filter="aretes">
+            <div class="ph" style="--a:#ebe2d4; --b:#d2c2a9;">
+              <span>img/aretes.jpg</span>
+              <img class="pic" src="img/aretes.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3>Aretes</h3>
+          </a>
+          <a class="collection" href="#novedades" data-filter="anillos">
+            <div class="ph" style="--a:#e6dccd; --b:#bfa987;">
+              <span>img/anillos.jpg</span>
+              <img class="pic" src="img/anillos.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3>Anillos</h3>
+          </a>
+          <a class="collection" href="#novedades" data-filter="collares">
+            <div class="ph" style="--a:#efe7da; --b:#d8c9b0;">
+              <span>img/collares.jpg</span>
+              <img class="pic" src="img/collares.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3>Collares</h3>
+          </a>
+          <a class="collection" href="#novedades" data-filter="pulseras">
+            <div class="ph" style="--a:#e4d9c8; --b:#c9b698;">
+              <span>img/pulseras.jpg</span>
+              <img class="pic" src="img/pulseras.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3>Pulseras</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="novedades" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Novedades</h2>
+        </div>
+
+        <div class="chips" role="group" aria-label="Filtrar por categoría">
+          <button type="button" class="chip is-active" data-filter="todo">Todo</button>
+          <button type="button" class="chip" data-filter="aretes">Aretes</button>
+          <button type="button" class="chip" data-filter="anillos">Anillos</button>
+          <button type="button" class="chip" data-filter="collares">Collares</button>
+          <button type="button" class="chip" data-filter="pulseras">Pulseras</button>
+        </div>
+
+        <!-- Datos de ejemplo: nombres y precios se cargan desde el panel.
+             Imagen de cada producto: img/producto-1.jpg … img/producto-8.jpg -->
+        <div class="products" id="products">
+          <article class="product" data-cat="aretes" data-name="Aretes Concha" data-price="289">
+            <div class="ph" style="--a:#ece3d5; --b:#d3c3aa;">
+              <span>img/producto-1.jpg</span>
+              <img class="pic" src="img/producto-1.jpg" alt="Aretes Concha" onerror="this.remove()">
+              <b class="badge">Nuevo</b>
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Aretes Concha</h3><span class="price">$289</span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+          <article class="product" data-cat="anillos" data-name="Anillo Ola" data-price="219">
+            <div class="ph" style="--a:#e8decf; --b:#c6b293;">
+              <span>img/producto-2.jpg</span>
+              <img class="pic" src="img/producto-2.jpg" alt="Anillo Ola" onerror="this.remove()">
+              <b class="badge badge-sale">-15%</b>
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Anillo Ola</h3><span class="price"><s>$259</s><b>$219</b></span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+          <article class="product" data-cat="collares" data-name="Collar Duna" data-price="349">
+            <div class="ph" style="--a:#efe8dc; --b:#d9cab1;">
+              <span>img/producto-3.jpg</span>
+              <img class="pic" src="img/producto-3.jpg" alt="Collar Duna" onerror="this.remove()">
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Collar Duna</h3><span class="price">$349</span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+          <article class="product" data-cat="pulseras" data-name="Pulsera Marea" data-price="319">
+            <div class="ph" style="--a:#e5dac9; --b:#cbb99c;">
+              <span>img/producto-4.jpg</span>
+              <img class="pic" src="img/producto-4.jpg" alt="Pulsera Marea" onerror="this.remove()">
+              <b class="badge">Nuevo</b>
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Pulsera Marea</h3><span class="price">$319</span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+          <article class="product" data-cat="aretes" data-name="Aretes Raíz" data-price="269">
+            <div class="ph" style="--a:#ebe1d2; --b:#cdbb9f;">
+              <span>img/producto-5.jpg</span>
+              <img class="pic" src="img/producto-5.jpg" alt="Aretes Raíz" onerror="this.remove()">
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Aretes Raíz</h3><span class="price">$269</span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+          <article class="product" data-cat="anillos" data-name="Anillo Pliegue" data-price="239">
+            <div class="ph" style="--a:#e7dccc; --b:#c2ac8b;">
+              <span>img/producto-6.jpg</span>
+              <img class="pic" src="img/producto-6.jpg" alt="Anillo Pliegue" onerror="this.remove()">
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Anillo Pliegue</h3><span class="price">$239</span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+          <article class="product" data-cat="collares" data-name="Collar Brisa" data-price="329">
+            <div class="ph" style="--a:#eee6d9; --b:#d6c6ac;">
+              <span>img/producto-7.jpg</span>
+              <img class="pic" src="img/producto-7.jpg" alt="Collar Brisa" onerror="this.remove()">
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Collar Brisa</h3><span class="price">$329</span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+          <article class="product" data-cat="pulseras" data-name="Pulsera Orilla" data-price="299">
+            <div class="ph" style="--a:#e9dfd0; --b:#c8b597;">
+              <span>img/producto-8.jpg</span>
+              <img class="pic" src="img/producto-8.jpg" alt="Pulsera Orilla" onerror="this.remove()">
+              <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
+            </div>
+            <div class="meta"><h3>Pulsera Orilla</h3><span class="price">$299</span></div>
+            <button class="add" type="button">🛍️ Agregar</button>
+          </article>
+        </div>
+        <p class="empty" id="empty" hidden>No encontramos piezas con ese nombre. Prueba con otra palabra o elige “Todo”.</p>
+      </div>
+    </section>
+
+    <section class="facts" id="materiales">
+      <div class="wrap">
+        <div class="fact">
+          <h3>Acero 316L</h3>
+          <p>Un material resistente, pensado para usarse todos los días.</p>
+        </div>
+        <div class="fact">
+          <h3>Resistente al agua</h3>
+          <p>Te la puedes dejar puesta en la regadera, la alberca o el mar.</p>
+        </div>
+        <div class="fact">
+          <h3>Diseño orgánico</h3>
+          <p>Formas que parecen de la naturaleza, hechas para combinar entre sí.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fotos de Instagram: img/ig-1.jpg … img/ig-6.jpg -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Así se usa</h2>
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener">📷 @pranajoyeria</a>
+        </div>
+        <div class="ig">
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener" class="ph" style="--a:#ebe2d4; --b:#d0bfa4;"><span>img/ig-1.jpg</span><img class="pic" src="img/ig-1.jpg" alt="" onerror="this.remove()"></a>
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener" class="ph" style="--a:#e6dccd; --b:#c4af8f;"><span>img/ig-2.jpg</span><img class="pic" src="img/ig-2.jpg" alt="" onerror="this.remove()"></a>
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener" class="ph" style="--a:#efe7da; --b:#d8c9b0;"><span>img/ig-3.jpg</span><img class="pic" src="img/ig-3.jpg" alt="" onerror="this.remove()"></a>
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener" class="ph" style="--a:#e4d9c8; --b:#c9b698;"><span>img/ig-4.jpg</span><img class="pic" src="img/ig-4.jpg" alt="" onerror="this.remove()"></a>
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener" class="ph" style="--a:#ece3d5; --b:#cdbb9f;"><span>img/ig-5.jpg</span><img class="pic" src="img/ig-5.jpg" alt="" onerror="this.remove()"></a>
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener" class="ph" style="--a:#e8decf; --b:#c6b293;"><span>img/ig-6.jpg</span><img class="pic" src="img/ig-6.jpg" alt="" onerror="this.remove()"></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="brand">
+        <div class="wordmark">PRANA</div>
+        <p>Joyería en acero 316L. Cancún y Ciudad de México.</p>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#novedades" data-filter="aretes">Aretes</a></li>
+          <li><a href="#novedades" data-filter="anillos">Anillos</a></li>
+          <li><a href="#novedades" data-filter="collares">Collares</a></li>
+          <li><a href="#novedades" data-filter="pulseras">Pulseras</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Envíos</a></li>
+          <li><a href="#">Cambios y devoluciones</a></li>
+          <li><a href="#">Cuidado de tus joyas</a></li>
+          <li><a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener">📷 @pranajoyeria</a></li>
+        </ul>
+      </div>
+      <p class="legal">💳 Paga con tarjeta, OXXO o transferencia SPEI.</p>
+    </div>
+  </footer>
+
+  <!-- Carrito lateral -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="cart" id="cart" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cart-head">
+      <h2>🛍️ Tu carrito</h2>
+      <button type="button" class="cart-close" id="cart-close" aria-label="Cerrar carrito">×</button>
+    </div>
+    <ul class="cart-list" id="cart-list"></ul>
+    <p class="cart-empty" id="cart-empty">Tu carrito está vacío. Agrega una pieza que te guste 💛</p>
+    <div class="cart-foot" id="cart-foot" hidden>
+      <div class="cart-total"><span>Total</span><strong id="cart-total">$0</strong></div>
+      <button type="button" class="btn" id="checkout">💳 Pagar con Mercado Pago</button>
+      <p>Pagas con tarjeta, OXXO o transferencia SPEI.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Popup de ejemplo: imagen, texto, fechas y cuándo aparece se editan desde el panel -->
+  <dialog class="popup" id="popup" aria-labelledby="popup-title">
+    <button class="popup-close" type="button" id="popup-close" aria-label="Cerrar">×</button>
+    <div class="popup-body">
+      <div class="ph" style="--a:#e6dbc9; --b:#c0aa89;">
+        <span>img/popup.jpg</span>
+        <img class="pic" src="img/popup.jpg" alt="" onerror="this.remove()">
+      </div>
+      <form class="popup-text" method="dialog">
+        <h2 id="popup-title">🎁 10% en tu primera compra</h2>
+        <p>Déjanos tu correo y te enviamos tu código.</p>
+        <input type="email" name="email" placeholder="Tu correo" autocomplete="email" required>
+        <button class="btn" type="submit">Quiero mi código</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Solo para la presentación del mockup -->
+  <div class="mock-tag">
+    Mockup · datos de ejemplo
+    <button type="button" id="popup-open">🎁 Ver popup</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
