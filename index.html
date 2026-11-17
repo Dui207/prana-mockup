@@ -12,8 +12,23 @@
 </head>
 <body>
 
+  <!-- Íconos de línea fina (se pintan con el color del texto que los rodea) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M6 18C6 10 11 5 19 5c0 8-4 13-12 13z"/><path d="M6 18l7-7"/></symbol>
+      <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.5 1.5 5.4 6 6-4.5.6-5.4 1.5-6 6-.6-4.5-1.5-5.4-6-6 4.5-.6 5.4-1.5 6-6z"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="3.2"/><path d="M8 7l1.2-2h5.6L16 7"/></symbol>
+    </defs>
+  </svg>
+
   <!-- Banner de anuncio: texto y fechas editables desde el panel -->
-  <div class="announce">✨ Nuevos diseños orgánicos ya disponibles</div>
+  <div class="announce"><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg> Nuevos diseños orgánicos ya disponibles</div>
 
   <header class="site-header">
     <div class="wrap">
@@ -25,9 +40,9 @@
           <a href="#materiales">Materiales</a>
         </nav>
         <div class="tools">
-          <button type="button" id="search-toggle" class="icon-btn" aria-label="Buscar">🔍</button>
+          <button type="button" id="search-toggle" class="icon-btn" aria-label="Buscar"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></button>
           <button type="button" id="cart-open" class="icon-btn" aria-label="Abrir carrito">
-            🛍️<span class="count" id="cart-count" hidden>0</span>
+            <svg class="i" aria-hidden="true"><use href="#i-bag"/></svg><span class="count" id="cart-count" hidden>0</span>
           </button>
         </div>
       </div>
@@ -51,7 +66,7 @@
           <h1>Se queda puesta.</h1>
           <p>Joyería en acero 316L de diseño orgánico. Resiste el agua y el uso diario.</p>
           <a class="btn" href="#novedades">Ver novedades</a>
-          <p class="hero-hint">👆 Toca los puntos de la foto para comprar lo que ves.</p>
+          <p class="hero-hint">Toca los puntos + de la foto para comprar lo que ves.</p>
         </div>
 
         <div>
@@ -82,14 +97,14 @@
             <div class="spot-card" id="spot-card" hidden>
               <h3 id="spot-name"></h3>
               <span class="price" id="spot-price"></span>
-              <button type="button" class="add" id="spot-add">🛍️ Agregar</button>
+              <button type="button" class="add" id="spot-add"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
             </div>
           </div>
 
           <div class="scene-tabs" role="tablist" aria-label="Escenas">
-            <button class="tab" type="button" role="tab" aria-selected="true" data-scene="escena-1">☀️ Mañana</button>
-            <button class="tab" type="button" role="tab" aria-selected="false" data-scene="escena-2">💧 Agua</button>
-            <button class="tab" type="button" role="tab" aria-selected="false" data-scene="escena-3">🌙 Noche</button>
+            <button class="tab" type="button" role="tab" aria-selected="true" data-scene="escena-1"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg> Mañana</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-scene="escena-2"><svg class="i" aria-hidden="true"><use href="#i-drop"/></svg> Agua</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-scene="escena-3"><svg class="i" aria-hidden="true"><use href="#i-moon"/></svg> Noche</button>
           </div>
         </div>
 
@@ -98,10 +113,10 @@
 
     <section class="perks" aria-label="Por qué PRANA">
       <div class="wrap">
-        <p><span aria-hidden="true">💧</span> Resistente al agua</p>
-        <p><span aria-hidden="true">✨</span> Acero 316L</p>
-        <p><span aria-hidden="true">🌿</span> Diseño orgánico</p>
-        <p><span aria-hidden="true">💳</span> Tarjeta, OXXO o SPEI</p>
+        <p><svg class="i" aria-hidden="true"><use href="#i-drop"/></svg> Resistente al agua</p>
+        <p><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg> Acero 316L</p>
+        <p><svg class="i" aria-hidden="true"><use href="#i-leaf"/></svg> Diseño orgánico</p>
+        <p><svg class="i" aria-hidden="true"><use href="#i-card"/></svg> Tarjeta, OXXO o SPEI</p>
       </div>
     </section>
 
@@ -165,7 +180,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Aretes Concha</h3><span class="price">$289</span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
           <article class="product" data-cat="anillos" data-name="Anillo Ola" data-price="219">
             <div class="ph" style="--a:#e8decf; --b:#c6b293;">
@@ -175,7 +190,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Anillo Ola</h3><span class="price"><s>$259</s><b>$219</b></span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
           <article class="product" data-cat="collares" data-name="Collar Duna" data-price="349">
             <div class="ph" style="--a:#efe8dc; --b:#d9cab1;">
@@ -184,7 +199,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Collar Duna</h3><span class="price">$349</span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
           <article class="product" data-cat="pulseras" data-name="Pulsera Marea" data-price="319">
             <div class="ph" style="--a:#e5dac9; --b:#cbb99c;">
@@ -194,7 +209,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Pulsera Marea</h3><span class="price">$319</span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
           <article class="product" data-cat="aretes" data-name="Aretes Raíz" data-price="269">
             <div class="ph" style="--a:#ebe1d2; --b:#cdbb9f;">
@@ -203,7 +218,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Aretes Raíz</h3><span class="price">$269</span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
           <article class="product" data-cat="anillos" data-name="Anillo Pliegue" data-price="239">
             <div class="ph" style="--a:#e7dccc; --b:#c2ac8b;">
@@ -212,7 +227,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Anillo Pliegue</h3><span class="price">$239</span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
           <article class="product" data-cat="collares" data-name="Collar Brisa" data-price="329">
             <div class="ph" style="--a:#eee6d9; --b:#d6c6ac;">
@@ -221,7 +236,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Collar Brisa</h3><span class="price">$329</span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
           <article class="product" data-cat="pulseras" data-name="Pulsera Orilla" data-price="299">
             <div class="ph" style="--a:#e9dfd0; --b:#c8b597;">
@@ -230,7 +245,7 @@
               <button type="button" class="fav" aria-label="Guardar en favoritos" aria-pressed="false">♡</button>
             </div>
             <div class="meta"><h3>Pulsera Orilla</h3><span class="price">$299</span></div>
-            <button class="add" type="button">🛍️ Agregar</button>
+            <button class="add" type="button"><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Agregar</button>
           </article>
         </div>
         <p class="empty" id="empty" hidden>No encontramos piezas con ese nombre. Prueba con otra palabra o elige “Todo”.</p>
@@ -259,7 +274,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Así se usa</h2>
-          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener">📷 @pranajoyeria</a>
+          <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg> @pranajoyeria</a>
         </div>
         <div class="ig">
           <a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener" class="ph" style="--a:#ebe2d4; --b:#d0bfa4;"><span>img/ig-1.jpg</span><img class="pic" src="img/ig-1.jpg" alt="" onerror="this.remove()"></a>
@@ -276,46 +291,64 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="cols">
-        <div class="brand">
-          <p>Joyería en acero 316L. Cancún y Ciudad de México.</p>
-          <p class="legal">💳 Paga con tarjeta, OXXO o transferencia SPEI.</p>
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="wordmark" href="#" aria-label="PRANA, inicio">PRANA</a>
+          <p>Joyería en acero 316L de diseño orgánico, resistente al agua y pensada para el uso diario.</p>
+          <p class="foot-place">Cancún y Ciudad de México</p>
+          <a class="foot-ig" href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg> @pranajoyeria</a>
         </div>
-        <div>
+
+        <nav aria-label="Tienda">
           <h4>Tienda</h4>
           <ul>
+            <li><a href="#novedades" data-filter="todo">Novedades</a></li>
             <li><a href="#novedades" data-filter="aretes">Aretes</a></li>
             <li><a href="#novedades" data-filter="anillos">Anillos</a></li>
             <li><a href="#novedades" data-filter="collares">Collares</a></li>
             <li><a href="#novedades" data-filter="pulseras">Pulseras</a></li>
           </ul>
-        </div>
-        <div>
+        </nav>
+
+        <nav aria-label="Ayuda">
           <h4>Ayuda</h4>
           <ul>
             <li><a href="#">Envíos</a></li>
             <li><a href="#">Cambios y devoluciones</a></li>
             <li><a href="#">Cuidado de tus joyas</a></li>
-            <li><a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener">📷 @pranajoyeria</a></li>
+            <li><a href="https://www.instagram.com/pranajoyeria/" target="_blank" rel="noopener">Escríbenos por Instagram</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h4>Formas de pago</h4>
+          <ul class="pay">
+            <li><svg class="i" aria-hidden="true"><use href="#i-card"/></svg> Tarjeta de crédito o débito</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Efectivo en OXXO</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg> Transferencia SPEI</li>
           </ul>
         </div>
       </div>
+
+      <div class="foot-bottom">
+        <span>© 2026 PRANA. Todos los derechos reservados.</span>
+        <span class="foot-links"><a href="#">Aviso de privacidad</a><a href="#">Términos y condiciones</a></span>
+      </div>
     </div>
-    <div class="mega" aria-hidden="true">PRANA</div>
   </footer>
 
   <!-- Carrito lateral -->
   <div class="scrim" id="scrim" hidden></div>
   <aside class="cart" id="cart" aria-label="Carrito de compras" aria-hidden="true">
     <div class="cart-head">
-      <h2>🛍️ Tu carrito</h2>
+      <h2><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg> Tu carrito</h2>
       <button type="button" class="cart-close" id="cart-close" aria-label="Cerrar carrito">×</button>
     </div>
     <ul class="cart-list" id="cart-list"></ul>
-    <p class="cart-empty" id="cart-empty">Tu carrito está vacío. Agrega una pieza que te guste 💛</p>
+    <p class="cart-empty" id="cart-empty">Tu carrito está vacío. Agrega una pieza que te guste.</p>
     <div class="cart-foot" id="cart-foot" hidden>
       <div class="cart-total"><span>Total</span><strong id="cart-total">$0</strong></div>
-      <button type="button" class="btn" id="checkout">💳 Pagar con Mercado Pago</button>
+      <button type="button" class="btn" id="checkout"><svg class="i" aria-hidden="true"><use href="#i-card"/></svg> Pagar con Mercado Pago</button>
       <p>Pagas con tarjeta, OXXO o transferencia SPEI.</p>
     </div>
   </aside>
@@ -331,7 +364,7 @@
         <img class="pic" src="img/popup.jpg" alt="" onerror="this.remove()">
       </div>
       <form class="popup-text" method="dialog">
-        <h2 id="popup-title">🎁 10% en tu primera compra</h2>
+        <h2 id="popup-title">10% en tu primera compra</h2>
         <p>Déjanos tu correo y te enviamos tu código.</p>
         <input type="email" name="email" placeholder="Tu correo" autocomplete="email" required>
         <button class="btn" type="submit">Quiero mi código</button>
@@ -342,7 +375,7 @@
   <!-- Solo para la presentación del mockup -->
   <div class="mock-tag">
     Mockup · datos de ejemplo
-    <button type="button" id="popup-open">🎁 Ver popup</button>
+    <button type="button" id="popup-open">Ver popup</button>
   </div>
 
   <script src="app.js"></script>

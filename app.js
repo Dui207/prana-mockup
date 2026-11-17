@@ -143,7 +143,7 @@ function addToCart(name) {
   item.qty += 1;
   cart.set(name, item);
   renderCart();
-  showToast(`🛍️ ${name} agregado`);
+  showToast(`${name} agregado al carrito`);
 }
 
 products.forEach((card) => {
@@ -154,7 +154,7 @@ $("#cart-open").addEventListener("click", openCart);
 $("#cart-close").addEventListener("click", closeCart);
 scrim.addEventListener("click", closeCart);
 $("#checkout").addEventListener("click", () =>
-  showToast("En el sitio real aquí se abre Mercado Pago 💳")
+  showToast("En el sitio real aquí se abre Mercado Pago")
 );
 
 /* ---------- Escenas del hero ---------- */
